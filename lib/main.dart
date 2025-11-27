@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
+// ignore: unused_import
+import 'package:union_shop/about_us_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -207,7 +209,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         ElevatedButton(
-                          onPressed: () => launch('package:union_shop/product_page.dart'),
+                          onPressed: () =>
+                              launch('package:union_shop/product_page.dart'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF4d2963),
                             foregroundColor: Colors.white,
@@ -303,8 +306,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-void launch(String s) {
-}
+void launch(String s) {}
 
 class ProductCard extends StatelessWidget {
   final String title;
