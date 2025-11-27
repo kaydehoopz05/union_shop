@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     color: const Color(0xFF4d2963),
                     child: const Text(
-                      'READY TO BUY',
+                      '20% OFF ON ALL PRODUCTS. COME AND GRAB THIS OFFER',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () =>
                                       Navigator.pushNamed(context, '/about'),
                                   child: const Text(
-                                    'About ',
+                                    'About',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
