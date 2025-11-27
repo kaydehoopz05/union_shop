@@ -98,11 +98,11 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () =>
                                       Navigator.pushNamed(context, '/about'),
                                   child: const Text(
-                                    'About Us',
+                                    'About ',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 18,
+                                      fontSize: 13,
                                     ),
                                   ),
                                 ),
