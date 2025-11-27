@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({super.key});
 
- void navigateToHome(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-  }
+  void navigateToHome(BuildContext context) {
+      Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
 
+  // ignore: unused_element
   void placeholderCallbackForButtons() {
-    // This is the event handler for buttons that don't work yet
   }
 
   @override
@@ -16,6 +15,12 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('About Us'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: const Center(
         child: Padding(
