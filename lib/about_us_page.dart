@@ -10,7 +10,14 @@ class AboutUsPage extends StatelessWidget {
         title: const Text('About Us'),
       ),
       body: const Center(
-        child: Text('This is the About Us page.'),
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Text(
+            'This is the Union Shop. We sell a variety of products to support our student union and enhance student life. Our profits go back into funding student activities and services.',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18.0),
+          ),
+        ),
       ),
     );
   }
