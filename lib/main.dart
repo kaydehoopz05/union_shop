@@ -37,6 +37,14 @@ class HomeScreen extends StatelessWidget {
     Navigator.pushNamed(context, '/product');
   }
 
+  void navigateToAboutUs(BuildContext context) {
+    Navigator.pushNamed(context, '/about');
+  }
+
+  void navigateToHome(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
   void placeholderCallbackForButtons() {
     // This is the event handler for buttons that don't work yet
   }
@@ -71,6 +79,7 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           GestureDetector(
+                            onTap: () => navigateToHome(context),
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
                               height: 18,
@@ -95,8 +104,7 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 TextButton(
-                                  onPressed: () => 
-                                      Navigator.pushNamed(context, '/about'),
+                                  onPressed: () => navigateToAboutUs(context),
                                   child: const Text(
                                     'About',
                                     style: TextStyle(
