@@ -29,10 +29,6 @@ class UnionShopApp extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  void navigateToHome(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-  }
-
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
   }
@@ -71,9 +67,6 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              navigateToHome(context);
-                            },
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
                               height: 18,
@@ -95,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                           ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 600),
                             child: Row(
-                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 IconButton(
                                   icon: const Icon(
@@ -179,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Colors.black.withValues(alpha: 0.7),
+                          color: Colors.black.withOpacity(0.7),
                         ),
                       ),
                     ),
