@@ -159,8 +159,8 @@ class AboutUsPage extends StatelessWidget {
                     'This is the Union Shop.'
                     'We sell a variety of products to support our student union, and so you can'
                     'represent us as much as possible.',
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 14.0, height: 1.5),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16.0, height: 1.5),
                   ),
                 ],
               ),
@@ -172,7 +172,7 @@ class AboutUsPage extends StatelessWidget {
               color: Colors.grey[50],
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                'ADD LINKS',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
