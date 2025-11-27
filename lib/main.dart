@@ -172,6 +172,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
+                          // ignore: deprecated_member_use
                           color: Colors.black.withOpacity(0.7),
                         ),
                       ),
@@ -206,7 +207,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         ElevatedButton(
-                          onPressed: placeholderCallbackForButtons,
+                          onPressed: () => launch('package:union_shop/product_page.dart'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF4d2963),
                             foregroundColor: Colors.white,
@@ -300,6 +301,9 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void launch(String s) {
 }
 
 class ProductCard extends StatelessWidget {
