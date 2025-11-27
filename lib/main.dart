@@ -95,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 TextButton(
-                                  onPressed: () =>
+                                  onPressed: () => 
                                       Navigator.pushNamed(context, '/about'),
                                   child: const Text(
                                     'About',
