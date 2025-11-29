@@ -99,7 +99,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const Spacer(),
                           ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 600),
+                            constraints:
+                            const BoxConstraints(maxWidth:600),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -114,6 +115,12 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                        ]) ),
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 600),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
                                 IconButton(
                                   icon: const Icon(
                                     Icons.search,
