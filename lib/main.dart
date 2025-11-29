@@ -105,6 +105,50 @@ class HomeScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 TextButton(
+                                  onPressed: () => placeholderCallbackForButtons(),
+                                  child: const Text(
+                                    'Home',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () => placeholderCallbackForButtons(),
+                                  child: const Text(
+                                    'Shop',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () => placeholderCallbackForButtons(),
+                                  child: const Text(
+                                    'The Print Shop',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                                TextButton(
+                                  onPressed: () => placeholderCallbackForButtons(),
+                                  child: const Text(
+                                    'SALE!',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                                TextButton(
                                   onPressed: () => navigateToAboutUs(context),
                                   child: const Text(
                                     'About',
