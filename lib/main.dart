@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 13,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -122,7 +122,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 13,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -133,7 +133,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 13,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -144,7 +144,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 13,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -155,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
-                                      fontSize: 13,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
