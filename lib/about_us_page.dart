@@ -153,12 +153,13 @@ class AboutUsPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
-                    softWrap: true,
                   ),
                   SizedBox(height: 24),
                   Text(
-                    'This is the Union Shop.\n We sell a variety of products to support our student union, and so you can \n represent us as much as possible.',
-                    textAlign: TextAlign.center,
+                    ' This is the Union Shop.\n We sell a variety of products to support our student union, and so you can represent us as much as possible. \n'
+                    ' We hope you enjoy using our products and much as we enjoy making them!\n'
+                    " If you have any problems, don't hesitate to email us at: \n upsu@gmail.com\n\n"
+                    ' Regards,\n The Student Union',
                     style: TextStyle(fontSize: 16.0, height: 1.5),
                   ),
                 ],
