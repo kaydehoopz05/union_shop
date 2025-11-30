@@ -160,6 +160,7 @@ class AboutUsPage extends StatelessWidget {
                     ' We hope you enjoy using our products and much as we enjoy making them!\n'
                     " If you have any problems, don't hesitate to email us at: \n upsu@gmail.com\n\n"
                     ' Regards,\n The Student Union',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16.0, height: 1.5),
                   ),
                 ],
