@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                             constraints:
                             const BoxConstraints(maxWidth:600),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 TextButton(
                                   onPressed: () => placeholderCallbackForButtons(),
@@ -361,13 +361,13 @@ class HomeScreen extends StatelessWidget {
             // Footer
             Container(
               width: double.infinity,
-              color: Colors.grey[50],
+              color: const Color.fromARGB(255, 41, 121, 179),
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Placeholder Footer',
+                'Opening Hours',
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 16,
+                  fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
