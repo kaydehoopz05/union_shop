@@ -271,7 +271,7 @@ class ResponsiveHomePage extends StatelessWidget {
                         ElevatedButton(
                           onPressed: () => navigateToCollections(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 155, 152, 156),
+                            backgroundColor: const Color.fromARGB(255, 163, 6, 215),
                             foregroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero,
