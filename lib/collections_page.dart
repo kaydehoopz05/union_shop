@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
 
 class CollectionsPage extends StatelessWidget {
-  const CollectionsPage({super.key});
-
+   const CollectionsPage({super.key});
+  
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
 
-  void placeholderCallbackForButtons() {
+  void placeholderCallbackForButtons() {}
+
+  void navigateToProduct(BuildContext context) {
+    Navigator.pushNamed(context, '/product');
   }
 
-   @override
+  void navigateToAboutUs(BuildContext context) {
+    Navigator.pushNamed(context, '/about');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header
             Container(
               height: 100,
               color: Colors.white,
               child: Column(
                 children: [
-                  // Top banner
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 8),
@@ -33,16 +39,13 @@ class CollectionsPage extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
-                  // Main header
                   Expanded(
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              navigateToHome(context);
-                            },
+                            onTap: () => navigateToHome(context),
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
                               height: 18,
@@ -61,78 +64,147 @@ class CollectionsPage extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
-                          ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 600),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                TextButton(
-                                  onPressed: () {}, // Already on the about page
-                                  child: const Text(
-                                    'About',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 13,
-                                    ),
+                          Wrap(
+                            spacing: 8.0, // Horizontal space between children
+                            runSpacing: 4.0, // Vertical space between runs
+                            alignment: WrapAlignment.end,
+                            children: [
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'Home',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.search,
-                                    size: 18,
-                                    color: Colors.grey,
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'Shop',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.person_outline,
-                                    size: 18,
-                                    color: Colors.grey,
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'The Print Shop',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.shopping_bag_outlined,
-                                    size: 18,
-                                    color: Colors.grey,
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'SALE!',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.menu,
-                                    size: 18,
-                                    color: Colors.grey,
+                              ),
+                              TextButton(
+                                onPressed: () => navigateToAboutUs(context),
+                                child: const Text(
+                                  'About',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                              ],
-                            ),
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.search,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.person_outline,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.shopping_bag_outlined,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.menu,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                            ],
                           ),
                         ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: screenSize.height * 0.4, // 40% of screen height
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  Positioned.fill(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          // ignore: deprecated_member_use
+                          color: Colors.black.withOpacity(0.7),
+                        ),
                       ),
                     ),
                   ),
