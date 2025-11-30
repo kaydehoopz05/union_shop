@@ -40,6 +40,10 @@ class ResponsiveHomePage extends StatelessWidget {
     Navigator.pushNamed(context, '/about');
   }
 
+    void navigateToCollections(BuildContext context) {
+    Navigator.pushNamed(context, '/collections');
+  }
+
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
@@ -264,9 +268,9 @@ class ResponsiveHomePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         ElevatedButton(
-                          onPressed: () => navigateToProduct(context),
+                          onPressed: () => navigateToCollections(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4d2963),
+                            backgroundColor: const Color.fromARGB(255, 155, 152, 156),
                             foregroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero,
