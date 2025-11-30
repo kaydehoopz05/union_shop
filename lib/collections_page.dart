@@ -211,7 +211,7 @@ class CollectionsPage extends StatelessWidget {
                         color: Colors.black,
                         letterSpacing: 1,
                       ),
-                    )
+                    ),
                     const SizedBox(height: 48),
                     LayoutBuilder(
                       builder: (context, constraints) {
