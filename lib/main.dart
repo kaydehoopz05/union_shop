@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/product_page.dart';
 import 'package:union_shop/about_us_page.dart';
+import 'package:union_shop/collections_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -12,26 +13,24 @@ class UnionShopApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: const ResponsiveHomePage(),
       title: 'Union Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF4d2963)),
       ),
-      home: const HomeScreen(),
-      // By default, the app starts at the '/' route, which is the HomeScreen
       initialRoute: '/',
-      // When navigating to '/product', build and return the ProductPage
-      // In your browser, try this link: http://localhost:49856/#/product
       routes: {
         '/product': (context) => const ProductPage(),
         '/about': (context) => const AboutUsPage(),
+        '/collections': (context) => const CollectionsPage(),
       },
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ResponsiveHomePage extends StatelessWidget {
+  const ResponsiveHomePage({super.key});
 
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
@@ -45,23 +44,20 @@ class HomeScreen extends StatelessWidget {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
 
-  void placeholderCallbackForButtons() {
-    // This is the event handler for buttons that don't work yet
-  }
+  void placeholderCallbackForButtons() {}
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header
             Container(
               height: 100,
               color: Colors.white,
               child: Column(
                 children: [
-                  // Top banner
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 8),
@@ -72,7 +68,6 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
-                  // Main header
                   Expanded(
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -98,127 +93,119 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
-                          ConstrainedBox(
-                            constraints:
-                            const BoxConstraints(maxWidth:600),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                TextButton(
-                                  onPressed: () => placeholderCallbackForButtons(),
-                                  child: const Text(
-                                    'Home',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 16,
-                                    ),
+                          Wrap(
+                            spacing: 8.0, // Horizontal space between children
+                            runSpacing: 4.0, // Vertical space between runs
+                            alignment: WrapAlignment.end,
+                            children: [
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'Home',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: () => placeholderCallbackForButtons(),
-                                  child: const Text(
-                                    'Shop',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 16,
-                                    ),
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'Shop',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: () => placeholderCallbackForButtons(),
-                                  child: const Text(
-                                    'The Print Shop',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 16,
-                                    ),
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'The Print Shop',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: () => placeholderCallbackForButtons(),
-                                  child: const Text(
-                                    'SALE!',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 16,
-                                    ),
+                              ),
+                              TextButton(
+                                onPressed: placeholderCallbackForButtons,
+                                child: const Text(
+                                  'SALE!',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: () => navigateToAboutUs(context),
-                                  child: const Text(
-                                    'About',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      decoration: TextDecoration.underline,
-                                      fontSize: 16,
-                                    ),
+                              ),
+                              TextButton(
+                                onPressed: () => navigateToAboutUs(context),
+                                child: const Text(
+                                  'About',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 16,
                                   ),
                                 ),
-                        ]) ),
-                          ConstrainedBox(
-                            constraints: const BoxConstraints(maxWidth: 600),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.search,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.search,
+                                  size: 18,
+                                  color: Colors.grey,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.person_outline,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.shopping_bag_outlined,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.person_outline,
+                                  size: 18,
+                                  color: Colors.grey,
                                 ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.menu,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
                                 ),
-                              ],
-                            ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.shopping_bag_outlined,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                              IconButton(
+                                icon: const Icon(
+                                  Icons.menu,
+                                  size: 18,
+                                  color: Colors.grey,
+                                ),
+                                padding: const EdgeInsets.all(8),
+                                constraints: const BoxConstraints(
+                                  minWidth: 32,
+                                  minHeight: 32,
+                                ),
+                                onPressed: placeholderCallbackForButtons,
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -227,14 +214,11 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Hero Section
             SizedBox(
-              height: 400,
+              height: screenSize.height * 0.4, // 40% of screen height
               width: double.infinity,
               child: Stack(
                 children: [
-                  // Background image
                   Positioned.fill(
                     child: Container(
                       decoration: const BoxDecoration(
@@ -247,13 +231,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                       child: Container(
                         decoration: BoxDecoration(
-                          // ignore: deprecated_member_use
                           color: Colors.black.withOpacity(0.7),
                         ),
                       ),
                     ),
                   ),
-                  // Content overlay
                   Positioned(
                     left: 24,
                     right: 24,
@@ -282,8 +264,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 32),
                         ElevatedButton(
-                          onPressed: () =>
-                              launch('package:union_shop/product_page.dart'),
+                          onPressed: () => navigateToProduct(context),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFF4d2963),
                             foregroundColor: Colors.white,
@@ -292,7 +273,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           child: const Text(
-                            'BROWSE PRODUCTS',
+                            'BROWSE COLLECTIONS',
                             style: TextStyle(fontSize: 14, letterSpacing: 1),
                           ),
                         ),
@@ -302,8 +283,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-
-            // Products Section
             Container(
               color: Colors.white,
               child: Padding(
@@ -319,46 +298,57 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 48),
-                    GridView.count(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount:
-                          MediaQuery.of(context).size.width > 600 ? 2 : 1,
-                      crossAxisSpacing: 24,
-                      mainAxisSpacing: 48,
-                      children: const [
-                        ProductCard(
-                          title: 'Simple UOP hoodie',
-                          price: '£12.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Simple UOP shirt',
-                          price: '£10.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Placeholder Product 3',
-                          price: '£20.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Placeholder Product 4',
-                          price: '£25.00',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                      ],
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        int crossAxisCount;
+                        if (constraints.maxWidth > 1200) {
+                          crossAxisCount = 4;
+                        } else if (constraints.maxWidth > 800) {
+                          crossAxisCount = 3;
+                        } else if (constraints.maxWidth > 600) {
+                          crossAxisCount = 2;
+                        } else {
+                          crossAxisCount = 1;
+                        }
+                        return GridView.count(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          crossAxisCount: crossAxisCount,
+                          crossAxisSpacing: 24,
+                          mainAxisSpacing: 48,
+                          children: const [
+                            ProductCard(
+                              title: 'Simple UOP hoodie',
+                              price: '£12.00',
+                              imageUrl:
+                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            ),
+                            ProductCard(
+                              title: 'Simple UOP shirt',
+                              price: '£10.00',
+                              imageUrl:
+                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            ),
+                            ProductCard(
+                              title: 'Placeholder Product 3',
+                              price: '£20.00',
+                              imageUrl:
+                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            ),
+                            ProductCard(
+                              title: 'Placeholder Product 4',
+                              price: '£25.00',
+                              imageUrl:
+                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                            ),
+                          ],
+                        );
+                      },
                     ),
                   ],
                 ),
               ),
             ),
-
-            // Footer
             Container(
               width: double.infinity,
               color: const Color.fromARGB(255, 41, 121, 179),
@@ -378,8 +368,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-void launch(String s) {}
 
 class ProductCard extends StatelessWidget {
   final String title;
