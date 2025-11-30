@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:union_shop/product_page.dart';
+// ignore: unused_import
+import 'package:union_shop/about_us_page.dart';
 
 class CollectionsPage extends StatelessWidget {
-   const CollectionsPage({super.key});
-  
-  void navigateToHome(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-  }
-
-  void placeholderCallbackForButtons() {}
+  const CollectionsPage({super.key});
 
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
@@ -17,10 +15,20 @@ class CollectionsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/about');
   }
 
+  void navigateToHome(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+
+  void placeholderCallbackForButtons() {}
+
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Collections'),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -179,32 +187,6 @@ class CollectionsPage extends StatelessWidget {
                             ],
                           ),
                         ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: screenSize.height * 0.4, // 40% of screen height
-              width: double.infinity,
-              child: Stack(
-                children: [
-                  Positioned.fill(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                            'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          // ignore: deprecated_member_use
-                          color: Colors.black.withOpacity(0.7),
-                        ),
                       ),
                     ),
                   ),
