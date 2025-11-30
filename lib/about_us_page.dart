@@ -157,7 +157,7 @@ class AboutUsPage extends StatelessWidget {
                   ),
                   SizedBox(height: 24),
                   Text(
-                    'This is the Union Shop./n We sell a variety of products to support our student union, and so you can /n represent us as much as possible.',
+                    'This is the Union Shop.\n We sell a variety of products to support our student union, and so you can \n represent us as much as possible.',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 16.0, height: 1.5),
                   ),
