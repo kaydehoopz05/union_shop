@@ -191,19 +191,27 @@ class CollectionsPage extends StatelessWidget {
               ),
             ),
             Container(
-              color: Colors.white,
+              color: const Color.fromARGB(255, 245, 216, 216),
               child: Padding(
                 padding: const EdgeInsets.all(40.0),
                 child: Column(
                   children: [
                     const Text(
-                      'PRODUCTS SECTION',
+                      'ESSENTIAL COLLECTIONS',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
                         letterSpacing: 1,
                       ),
                     ),
+                    const Text(
+                      'Buy smth',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        letterSpacing: 1,
+                      ),
+                    )
                     const SizedBox(height: 48),
                     LayoutBuilder(
                       builder: (context, constraints) {
