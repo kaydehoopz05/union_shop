@@ -103,7 +103,7 @@ class ResponsiveHomePage extends StatelessWidget {
                             alignment: WrapAlignment.end,
                             children: [
                               TextButton(
-                                onPressed: placeholderCallbackForButtons,
+                                onPressed: () => navigateToHome(context),
                                 child: const Text(
                                   'Home',
                                   style: TextStyle(
