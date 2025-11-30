@@ -26,9 +26,6 @@ class CollectionsPage extends StatelessWidget {
     // ignore: unused_local_variable
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Collections'),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
