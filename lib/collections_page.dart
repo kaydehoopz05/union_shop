@@ -213,7 +213,7 @@ class CollectionsPage extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      "Our essential collections are below. From sports to streetwear, there's something there for you",
+                      "Our essential collections are below. From sports to streetwear, there's something there for you.",
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black,
