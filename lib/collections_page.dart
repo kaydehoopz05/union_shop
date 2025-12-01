@@ -207,7 +207,15 @@ class CollectionsPage extends StatelessWidget {
                     const Text(
                       'Buy smth',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 15,
+                        color: Colors.black,
+                        letterSpacing: 1,
+                      ),
+                    ),
+                    const Text(
+                      "Our essential collections are below. From sports to streetwear, there's something there for you",
+                      style: TextStyle(
+                        fontSize: 15,
                         color: Colors.black,
                         letterSpacing: 1,
                       ),
