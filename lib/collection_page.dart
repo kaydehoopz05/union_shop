@@ -261,21 +261,25 @@ class CollectionPageState extends State<CollectionPage> {
                       children: const [
                         ProductCard(
                           title: 'Black UOP hoodie',
+                          price: '£15',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
                           title: 'White UOP hoodie',
+                          price: '£15',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
                           title: 'Purple UOP hoodie',
+                          price: '£15',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
                           title: 'Blue UOP hoodie',
+                          price: '£15',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
@@ -294,11 +298,13 @@ class CollectionPageState extends State<CollectionPage> {
 
 class ProductCard extends StatelessWidget {
   final String title;
+  final String price;
   final String imageUrl;
 
   const ProductCard({
     super.key,
     required this.title,
+    required this.price,
     required this.imageUrl,
   });
 
