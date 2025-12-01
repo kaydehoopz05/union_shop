@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
-import 'package:union_shop/product_page.dart';
 // ignore: unused_import
 import 'package:union_shop/about_us_page.dart';
 // ignore: unused_import
@@ -16,10 +15,6 @@ class CollectionsPage extends StatefulWidget {
 class CollectionsPageState extends State<CollectionsPage> {
   String _selectedFilter = 'All Products';
   final List<String> _filters = ['All Products', 'Clothing'];
-
-  void navigateToProduct(BuildContext context) {
-    Navigator.pushNamed(context, '/product');
-  }
 
   void navigateToAboutUs(BuildContext context) {
     Navigator.pushNamed(context, '/about');
@@ -265,22 +260,22 @@ class CollectionsPageState extends State<CollectionsPage> {
                       crossAxisSpacing: 24,
                       mainAxisSpacing: 48,
                       children: const [
-                        ProductCard(
+                        CollectionCard(
                           title: 'Simple UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
-                        ProductCard(
+                        CollectionCard(
                           title: 'Simple UOP shirt',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
-                        ProductCard(
+                        CollectionCard(
                           title: 'Placeholder Product 3',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
-                        ProductCard(
+                        CollectionCard(
                           title: 'Placeholder Product 4',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
@@ -298,11 +293,11 @@ class CollectionsPageState extends State<CollectionsPage> {
   }
 }
 
-class ProductCard extends StatelessWidget {
+class CollectionCard extends StatelessWidget {
   final String title;
   final String imageUrl;
 
-  const ProductCard({
+  const CollectionCard({
     super.key,
     required this.title,
     required this.imageUrl,
