@@ -260,22 +260,22 @@ class CollectionPageState extends State<CollectionPage> {
                       mainAxisSpacing: 48,
                       children: const [
                         ProductCard(
-                          title: 'Simple UOP hoodie',
+                          title: 'Black UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Simple UOP shirt',
+                          title: 'White UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 3',
+                          title: 'Purple UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 4',
+                          title: 'Blue UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                         ),
