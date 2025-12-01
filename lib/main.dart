@@ -48,22 +48,26 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     {
       'title': 'Simple UOP hoodie',
       'price': '£12.00',
-      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
     },
     {
       'title': 'Simple UOP shirt',
       'price': '£10.00',
-      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
     },
     {
       'title': 'Placeholder Product 3',
       'price': '£20.00',
-      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
     },
     {
       'title': 'Placeholder Product 4',
       'price': '£25.00',
-      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
     },
   ];
 
@@ -81,8 +85,9 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
       results = _allProducts;
     } else {
       results = _allProducts
-          .where((product) =>
-              product['title']!.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .where((product) => product['title']!
+              .toLowerCase()
+              .contains(enteredKeyword.toLowerCase()))
           .toList();
     }
     setState(() {
@@ -105,7 +110,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
-  
+
   void navigateToSignIn(BuildContext context) {
     Navigator.pushNamed(context, '/signin');
   }
@@ -178,7 +183,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   navigateToSale(context);
                                 }
                               },
-                              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                              itemBuilder: (BuildContext context) =>
+                                  <PopupMenuEntry<String>>[
                                 const PopupMenuItem<String>(
                                   value: 'home',
                                   child: Text('Home'),
@@ -199,16 +205,17 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   value: 'about',
                                   child: Text('About'),
                                 ),
-                                 const PopupMenuItem<String>(
+                                const PopupMenuItem<String>(
                                   value: 'signin',
                                   child: Text('Sign In'),
                                 ),
                               ],
-                              icon: const Icon(Icons.menu, color: Colors.grey, size: 18),
+                              icon: const Icon(Icons.menu,
+                                  color: Colors.grey, size: 18),
                             )
                           else
                             Wrap(
-                              spacing: 8.0, 
+                              spacing: 8.0,
                               runSpacing: 4.0,
                               alignment: WrapAlignment.end,
                               children: [
@@ -383,7 +390,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                         ElevatedButton(
                           onPressed: () => navigateToCollections(context),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromARGB(255, 163, 6, 215),
+                            backgroundColor:
+                                const Color.fromARGB(255, 163, 6, 215),
                             foregroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero,
@@ -430,7 +438,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                         return GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: crossAxisCount,
                             crossAxisSpacing: 24,
                             mainAxisSpacing: 48,
