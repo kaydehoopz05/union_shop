@@ -3,6 +3,7 @@ import 'package:union_shop/product_page.dart';
 import 'package:union_shop/about_us_page.dart';
 import 'package:union_shop/collections_page.dart';
 import 'package:union_shop/collection_page.dart';
+import 'package:union_shop/sign_in.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -25,7 +26,8 @@ class UnionShopApp extends StatelessWidget {
         '/product': (context) => const ProductPage(),
         '/about': (context) => const AboutUsPage(),
         '/collections': (context) => const CollectionsPage(),
-        '/collection': (context) => const CollectionPage()
+        '/collection': (context) => const CollectionPage(),
+        '/signin': (context) => const SignInPage(),
       },
     );
   }
@@ -48,6 +50,10 @@ class ResponsiveHomePage extends StatelessWidget {
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+  }
+  
+  void navigateToSignIn(BuildContext context) {
+    Navigator.pushNamed(context, '/signin');
   }
 
   void placeholderCallbackForButtons() {}
@@ -183,7 +189,7 @@ class ResponsiveHomePage extends StatelessWidget {
                                   minWidth: 32,
                                   minHeight: 32,
                                 ),
-                                onPressed: placeholderCallbackForButtons,
+                                onPressed: () => navigateToSignIn(context),
                               ),
                               IconButton(
                                 icon: const Icon(
