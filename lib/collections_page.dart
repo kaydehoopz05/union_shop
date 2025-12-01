@@ -214,7 +214,7 @@ class CollectionsPage extends StatelessWidget {
                     GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
+                      crossAxisCount: 3,
                       crossAxisSpacing: 24,
                       mainAxisSpacing: 48,
                       children: [
