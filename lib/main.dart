@@ -35,8 +35,60 @@ class UnionShopApp extends StatelessWidget {
   }
 }
 
-class ResponsiveHomePage extends StatelessWidget {
+class ResponsiveHomePage extends StatefulWidget {
   const ResponsiveHomePage({super.key});
+
+  @override
+  State<ResponsiveHomePage> createState() => _ResponsiveHomePageState();
+}
+
+class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
+  bool _isSearchVisible = false;
+  final List<Map<String, String>> _allProducts = [
+    {
+      'title': 'Simple UOP hoodie',
+      'price': '£12.00',
+      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'Simple UOP shirt',
+      'price': '£10.00',
+      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'Placeholder Product 3',
+      'price': '£20.00',
+      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'Placeholder Product 4',
+      'price': '£25.00',
+      'imageUrl': 'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+  ];
+
+  List<Map<String, String>> _foundProducts = [];
+
+  @override
+  void initState() {
+    _foundProducts = _allProducts;
+    super.initState();
+  }
+
+  void _runFilter(String enteredKeyword) {
+    List<Map<String, String>> results = [];
+    if (enteredKeyword.isEmpty) {
+      results = _allProducts;
+    } else {
+      results = _allProducts
+          .where((product) =>
+              product['title']!.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      _foundProducts = results;
+    });
+  }
 
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
@@ -226,7 +278,11 @@ class ResponsiveHomePage extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                    setState(() {
+                                      _isSearchVisible = !_isSearchVisible;
+                                    });
+                                  },
                                 ),
                                 IconButton(
                                   icon: const Icon(
@@ -263,6 +319,17 @@ class ResponsiveHomePage extends StatelessWidget {
                 ],
               ),
             ),
+            if (_isSearchVisible)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  onChanged: (value) => _runFilter(value),
+                  decoration: const InputDecoration(
+                    labelText: 'Search',
+                    suffixIcon: Icon(Icons.search),
+                  ),
+                ),
+              ),
             SizedBox(
               height: screenSize.height * 0.4, // 40% of screen height
               width: double.infinity,
@@ -360,38 +427,20 @@ class ResponsiveHomePage extends StatelessWidget {
                         } else {
                           crossAxisCount = 1;
                         }
-                        return GridView.count(
+                        return GridView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          crossAxisCount: crossAxisCount,
-                          crossAxisSpacing: 24,
-                          mainAxisSpacing: 48,
-                          children: const [
-                            ProductCard(
-                              title: 'Simple UOP hoodie',
-                              price: '£12.00',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Simple UOP shirt',
-                              price: '£10.00',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Placeholder Product 3',
-                              price: '£20.00',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Placeholder Product 4',
-                              price: '£25.00',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                          ],
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: crossAxisCount,
+                            crossAxisSpacing: 24,
+                            mainAxisSpacing: 48,
+                          ),
+                          itemCount: _foundProducts.length,
+                          itemBuilder: (context, index) => ProductCard(
+                            title: _foundProducts[index]['title']!,
+                            price: _foundProducts[index]['price']!,
+                            imageUrl: _foundProducts[index]['imageUrl']!,
+                          ),
                         );
                       },
                     ),
