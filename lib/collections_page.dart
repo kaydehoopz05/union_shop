@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
+import 'package:union_shop/product_page.dart';
 // ignore: unused_import
 import 'package:union_shop/about_us_page.dart';
 // ignore: unused_import
 import 'package:union_shop/collection_page.dart';
 
-class CollectionsPage extends StatefulWidget {
+class CollectionsPage extends StatelessWidget {
   const CollectionsPage({super.key});
 
-  @override
-  State<CollectionsPage> createState() => CollectionsPageState();
-}
-
-class CollectionsPageState extends State<CollectionsPage> {
-  String _selectedFilter = 'All Products';
-  final List<String> _filters = ['All Products', 'Clothing'];
+  void navigateToProduct(BuildContext context) {
+    Navigator.pushNamed(context, '/product');
+  }
 
   void navigateToAboutUs(BuildContext context) {
     Navigator.pushNamed(context, '/about');
@@ -230,55 +227,36 @@ class CollectionsPageState extends State<CollectionsPage> {
                       ),
                     ),
                     const SizedBox(height: 48),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Text('Filter by'),
-                        const SizedBox(width: 10),
-                        DropdownButton<String>(
-                          value: _selectedFilter,
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              _selectedFilter = newValue!;
-                            });
-                          },
-                          items: _filters
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
                     GridView.count(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       crossAxisCount: 2,
                       crossAxisSpacing: 24,
                       mainAxisSpacing: 48,
-                      children: const [
-                        CollectionCard(
+                      children: [
+                        ProductCard(
                           title: 'Simple UOP hoodie',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          onPressed: () => navigateToCollectionPage(context),
                         ),
-                        CollectionCard(
+                        ProductCard(
                           title: 'Simple UOP shirt',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          onPressed: () => placeholderCallbackForButtons(),
                         ),
-                        CollectionCard(
+                        ProductCard(
                           title: 'Placeholder Product 3',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          onPressed: () => placeholderCallbackForButtons(),
                         ),
-                        CollectionCard(
+                        ProductCard(
                           title: 'Placeholder Product 4',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                          onPressed: () => placeholderCallbackForButtons(),
                         ),
                       ],
                     ),
@@ -293,22 +271,22 @@ class CollectionsPageState extends State<CollectionsPage> {
   }
 }
 
-class CollectionCard extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final String title;
   final String imageUrl;
+  final VoidCallback onPressed;
 
-  const CollectionCard({
+  const ProductCard({
     super.key,
     required this.title,
     required this.imageUrl,
+    required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/product');
-      },
+      onTap: onPressed,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
