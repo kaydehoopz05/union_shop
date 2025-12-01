@@ -4,16 +4,16 @@ import 'package:union_shop/product_page.dart';
 // ignore: unused_import
 import 'package:union_shop/about_us_page.dart';
 // ignore: unused_import
-import 'package:union_shop/collections_page.dart';
+import 'package:union_shop/collection_page.dart';
 
-class CollectionPage extends StatefulWidget {
-  const CollectionPage({super.key});
+class CollectionsPage extends StatefulWidget {
+  const CollectionsPage({super.key});
 
   @override
-  State<CollectionPage> createState() => CollectionPageState();
+  State<CollectionsPage> createState() => CollectionsPageState();
 }
 
-class CollectionPageState extends State<CollectionPage> {
+class CollectionsPageState extends State<CollectionsPage> {
   String _selectedFilter = 'All Products';
   final List<String> _filters = ['All Products', 'Clothing'];
 
