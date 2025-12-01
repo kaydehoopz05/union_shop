@@ -25,6 +25,10 @@ class CollectionsPageState extends State<CollectionsPage> {
     Navigator.pushNamed(context, '/about');
   }
 
+  void navigateToCollectionPage(BuildContext context) {
+    Navigator.pushNamed(context, '/collection');
+  }
+
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
