@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:union_shop/product_page.dart';
-// ignore: unused_import
-import 'package:union_shop/about_us_page.dart';
 
 class CollectionPage extends StatefulWidget {
   const CollectionPage({super.key});

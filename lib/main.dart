@@ -5,6 +5,8 @@ import 'package:union_shop/collections_page.dart';
 import 'package:union_shop/collection_page.dart';
 import 'package:union_shop/sign_in.dart';
 import 'package:union_shop/sale_products.dart';
+// ignore: unused_import
+import 'package:union_shop/print_shack_about.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -245,7 +247,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   onSelected: (value) {
                                     // Handle menu item selection
                                   },
-                                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                  itemBuilder: (BuildContext context) =>
+                                      <PopupMenuEntry<String>>[
                                     const PopupMenuItem<String>(
                                       value: 'about',
                                       child: Text('About'),
