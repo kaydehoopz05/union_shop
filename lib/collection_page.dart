@@ -205,7 +205,7 @@ class CollectionPageState extends State<CollectionPage> {
                 child: Column(
                   children: [
                     const Text(
-                      'ESSENTIAL COLLECTIONS',
+                      'COLLECTIONS',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,

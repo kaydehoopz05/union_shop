@@ -203,25 +203,9 @@ class CollectionsPage extends StatelessWidget {
                 child: Column(
                   children: [
                     const Text(
-                      'ESSENTIAL COLLECTIONS',
+                      'COLLECTIONS',
                       style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    const Text(
-                      'Buy smth',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    const Text(
-                      "Our essential collections are below. From sports to streetwear, there's something there for you.",
-                      style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 24,
                         color: Colors.black,
                         letterSpacing: 1,
                       ),
@@ -237,7 +221,7 @@ class CollectionsPage extends StatelessWidget {
                         ProductCard(
                           title: 'Hoodies',
                           imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                              'https://th.bing.com/th/id/OIP.rKDWrB-LWQsVSLqrobhYwgHaEz?w=275&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3',
                           onPressed: () => navigateToCollectionPage(context),
                         ),
                         ProductCard(
