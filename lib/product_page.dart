@@ -15,8 +15,14 @@ class ProductPage extends StatelessWidget {
     Navigator.pushNamed(context, '/about');
   }
 
+    void navigateToSignIn(BuildContext context) {
+    Navigator.pushNamed(context, '/signin');
+  }
+
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    bool isMobile = screenSize.width < 800;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -66,6 +72,46 @@ class ProductPage extends StatelessWidget {
                             ),
                           ),
                           const Spacer(),
+                          if (isMobile)
+                            PopupMenuButton<String>(
+                              onSelected: (value) {
+                                if (value == 'home') {
+                                  navigateToHome(context);
+                                } else if (value == 'about') {
+                                  navigateToAboutUs(context);
+                                } else if (value == 'signin') {
+                                  navigateToSignIn(context);
+                                }
+                              },
+                              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                const PopupMenuItem<String>(
+                                  value: 'home',
+                                  child: Text('Home'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'shop',
+                                  child: Text('Shop'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'print_shop',
+                                  child: Text('The Print Shop'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'sale',
+                                  child: Text('SALE!'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'about',
+                                  child: Text('About'),
+                                ),
+                                 const PopupMenuItem<String>(
+                                  value: 'signin',
+                                  child: Text('Sign In'),
+                                ),
+                              ],
+                              icon: const Icon(Icons.menu, color: Colors.grey, size: 18),
+                            )
+                          else
                           Wrap(
                             spacing: 8.0, // Horizontal space between children
                             runSpacing: 4.0, // Vertical space between runs
