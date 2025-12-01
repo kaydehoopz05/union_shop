@@ -235,25 +235,25 @@ class CollectionsPage extends StatelessWidget {
                       mainAxisSpacing: 48,
                       children: [
                         ProductCard(
-                          title: 'Simple UOP hoodie',
+                          title: 'Hoodies',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                           onPressed: () => navigateToCollectionPage(context),
                         ),
                         ProductCard(
-                          title: 'Simple UOP shirt',
+                          title: 'Shirts',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                           onPressed: () => placeholderCallbackForButtons(),
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 3',
+                          title: 'Shorts',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                           onPressed: () => placeholderCallbackForButtons(),
                         ),
                         ProductCard(
-                          title: 'Placeholder Product 4',
+                          title: 'Bottoms',
                           imageUrl:
                               'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
                           onPressed: () => placeholderCallbackForButtons(),
