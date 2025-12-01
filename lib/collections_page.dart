@@ -221,48 +221,34 @@ class CollectionsPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 48),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        int crossAxisCount;
-                        if (constraints.maxWidth > 1200) {
-                          crossAxisCount = 4;
-                        } else if (constraints.maxWidth > 800) {
-                          crossAxisCount = 3;
-                        } else if (constraints.maxWidth > 600) {
-                          crossAxisCount = 2;
-                        } else {
-                          crossAxisCount = 1;
-                        }
-                        return GridView.count(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          crossAxisCount: crossAxisCount,
-                          crossAxisSpacing: 24,
-                          mainAxisSpacing: 48,
-                          children: const [
-                            ProductCard(
-                              title: 'Simple UOP hoodie',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Simple UOP shirt',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Placeholder Product 3',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                            ProductCard(
-                              title: 'Placeholder Product 4',
-                              imageUrl:
-                                  'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                            ),
-                          ],
-                        );
-                      },
+                    GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 24,
+                      mainAxisSpacing: 48,
+                      children: const [
+                        ProductCard(
+                          title: 'Simple UOP hoodie',
+                          imageUrl:
+                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        ),
+                        ProductCard(
+                          title: 'Simple UOP shirt',
+                          imageUrl:
+                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        ),
+                        ProductCard(
+                          title: 'Placeholder Product 3',
+                          imageUrl:
+                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        ),
+                        ProductCard(
+                          title: 'Placeholder Product 4',
+                          imageUrl:
+                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+                        ),
+                      ],
                     ),
                   ],
                 ),
