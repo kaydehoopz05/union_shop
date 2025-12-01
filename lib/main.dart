@@ -195,7 +195,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'print_shop',
-                                  child: Text('The Print Shop'),
+                                  child: Text('The Print Shack'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -241,10 +241,22 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                     ),
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                PopupMenuButton<String>(
+                                  onSelected: (value) {
+                                    // Handle menu item selection
+                                  },
+                                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                                    const PopupMenuItem<String>(
+                                      value: 'about',
+                                      child: Text('About'),
+                                    ),
+                                    const PopupMenuItem<String>(
+                                      value: 'personalisation',
+                                      child: Text('Personalisation'),
+                                    ),
+                                  ],
                                   child: const Text(
-                                    'The Print Shop',
+                                    'The Print Shack ⬇',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,

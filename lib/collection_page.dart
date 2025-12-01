@@ -27,7 +27,7 @@ class CollectionPageState extends State<CollectionPage> {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
 
-    void navigateToSignIn(BuildContext context) {
+  void navigateToSignIn(BuildContext context) {
     Navigator.pushNamed(context, '/signin');
   }
 
@@ -94,7 +94,8 @@ class CollectionPageState extends State<CollectionPage> {
                                   navigateToSignIn(context);
                                 }
                               },
-                              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                              itemBuilder: (BuildContext context) =>
+                                  <PopupMenuEntry<String>>[
                                 const PopupMenuItem<String>(
                                   value: 'home',
                                   child: Text('Home'),
@@ -105,7 +106,7 @@ class CollectionPageState extends State<CollectionPage> {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'print_shop',
-                                  child: Text('The Print Shop'),
+                                  child: Text('The Print Shack'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -115,128 +116,129 @@ class CollectionPageState extends State<CollectionPage> {
                                   value: 'about',
                                   child: Text('About'),
                                 ),
-                                 const PopupMenuItem<String>(
+                                const PopupMenuItem<String>(
                                   value: 'signin',
                                   child: Text('Sign In'),
                                 ),
                               ],
-                              icon: const Icon(Icons.menu, color: Colors.grey, size: 18),
+                              icon: const Icon(Icons.menu,
+                                  color: Colors.grey, size: 18),
                             )
                           else
-                          Wrap(
-                            spacing: 8.0, // Horizontal space between children
-                            runSpacing: 4.0, // Vertical space between runs
-                            alignment: WrapAlignment.end,
-                            children: [
-                              TextButton(
-                                onPressed: () => navigateToHome(context),
-                                child: const Text(
-                                  'Home',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 16,
+                            Wrap(
+                              spacing: 8.0, // Horizontal space between children
+                              runSpacing: 4.0, // Vertical space between runs
+                              alignment: WrapAlignment.end,
+                              children: [
+                                TextButton(
+                                  onPressed: () => navigateToHome(context),
+                                  child: const Text(
+                                    'Home',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: placeholderCallbackForButtons,
-                                child: const Text(
-                                  'Shop',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 16,
+                                TextButton(
+                                  onPressed: placeholderCallbackForButtons,
+                                  child: const Text(
+                                    'Shop',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: placeholderCallbackForButtons,
-                                child: const Text(
-                                  'The Print Shop',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 16,
+                                TextButton(
+                                  onPressed: placeholderCallbackForButtons,
+                                  child: const Text(
+                                    'The Print Shack',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: placeholderCallbackForButtons,
-                                child: const Text(
-                                  'SALE!',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 16,
+                                TextButton(
+                                  onPressed: placeholderCallbackForButtons,
+                                  child: const Text(
+                                    'SALE!',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              TextButton(
-                                onPressed: () => navigateToAboutUs(context),
-                                child: const Text(
-                                  'About',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    decoration: TextDecoration.underline,
-                                    fontSize: 16,
+                                TextButton(
+                                  onPressed: () => navigateToAboutUs(context),
+                                  child: const Text(
+                                    'About',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.search,
-                                  size: 18,
-                                  color: Colors.grey,
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.search,
+                                    size: 18,
+                                    color: Colors.grey,
+                                  ),
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 32,
+                                    minHeight: 32,
+                                  ),
+                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                padding: const EdgeInsets.all(8),
-                                constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.person_outline,
+                                    size: 18,
+                                    color: Colors.grey,
+                                  ),
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 32,
+                                    minHeight: 32,
+                                  ),
+                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                onPressed: placeholderCallbackForButtons,
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.person_outline,
-                                  size: 18,
-                                  color: Colors.grey,
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.shopping_bag_outlined,
+                                    size: 18,
+                                    color: Colors.grey,
+                                  ),
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 32,
+                                    minHeight: 32,
+                                  ),
+                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                padding: const EdgeInsets.all(8),
-                                constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.menu,
+                                    size: 18,
+                                    color: Colors.grey,
+                                  ),
+                                  padding: const EdgeInsets.all(8),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 32,
+                                    minHeight: 32,
+                                  ),
+                                  onPressed: placeholderCallbackForButtons,
                                 ),
-                                onPressed: placeholderCallbackForButtons,
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.shopping_bag_outlined,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
-                                padding: const EdgeInsets.all(8),
-                                constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
-                                onPressed: placeholderCallbackForButtons,
-                              ),
-                              IconButton(
-                                icon: const Icon(
-                                  Icons.menu,
-                                  size: 18,
-                                  color: Colors.grey,
-                                ),
-                                padding: const EdgeInsets.all(8),
-                                constraints: const BoxConstraints(
-                                  minWidth: 32,
-                                  minHeight: 32,
-                                ),
-                                onPressed: placeholderCallbackForButtons,
-                              ),
-                            ],
-                          ),
+                              ],
+                            ),
                         ],
                       ),
                     ),

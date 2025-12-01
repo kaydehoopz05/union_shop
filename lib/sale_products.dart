@@ -109,7 +109,7 @@ class SaleProductsPage extends StatelessWidget {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'print_shop',
-                                  child: Text('The Print Shop'),
+                                  child: Text('The Print Shack'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -158,7 +158,7 @@ class SaleProductsPage extends StatelessWidget {
                                 TextButton(
                                   onPressed: placeholderCallbackForButtons,
                                   child: const Text(
-                                    'The Print Shop',
+                                    'The Print Shack',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
