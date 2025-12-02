@@ -218,8 +218,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   child: Text('The Print Shack'),
                                 ),
                                 const PopupMenuItem<String>(
-                                  value: 'printshackabout',
-                                  child: Text('  - About'),
+                                  value: 'about',
+                                  child: Text('About'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
