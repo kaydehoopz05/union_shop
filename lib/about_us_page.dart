@@ -119,7 +119,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         ),
                         const PopupMenuItem<String>(
                           value: 'print_shop',
-                          child: Text('The Print Shack'),
+                          child: Text('The Print Shack ⬇'),
                         ),
                         const PopupMenuItem<String>(
                           value: 'sale',
