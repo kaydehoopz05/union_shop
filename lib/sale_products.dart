@@ -232,22 +232,7 @@ class SaleProductsPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ),
-                              const Padding(
-              padding: EdgeInsets.all(40.0),
-              child: Column(
-                children: [
-                  Text(
-                    'SALE',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                  )
           ],
         ),
       ),
