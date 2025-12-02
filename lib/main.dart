@@ -51,10 +51,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
   bool _isSearchVisible = false;
   final List<Map<String, String>> _allProducts = [
     {
-      'title': 'Simple UOP hoodie',
-      'price': '£12.00',
+      'title': 'Purple UOP hoodie',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://th.bing.com/th/id/OIP.rKDWrB-LWQsVSLqrobhYwgHaEz?w=275&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3',
     },
     {
       'title': 'Simple UOP shirt',
