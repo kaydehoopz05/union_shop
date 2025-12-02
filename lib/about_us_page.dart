@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AboutUsPage extends StatelessWidget {
+class AboutUsPage extends StatefulWidget {
   const AboutUsPage({super.key});
+
+  @override
+  State<AboutUsPage> createState() => _AboutUsPageState();
+}
+
+class _AboutUsPageState extends State<AboutUsPage> {
+  bool _isSearchVisible = false;
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -200,7 +207,11 @@ class AboutUsPage extends StatelessWidget {
                           padding: const EdgeInsets.all(8),
                           constraints:
                               const BoxConstraints(minWidth: 32, minHeight: 32),
-                          onPressed: placeholderCallbackForButtons,
+                          onPressed: () {
+                            setState(() {
+                              _isSearchVisible = !_isSearchVisible;
+                            });
+                          },
                         ),
                         IconButton(
                           icon: const Icon(
@@ -240,6 +251,16 @@ class AboutUsPage extends StatelessWidget {
                 ],
               ),
             ),
+            if (_isSearchVisible)
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Search',
+                    suffixIcon: Icon(Icons.search),
+                  ),
+                ),
+              ),
             // About Us Content
             const Padding(
               padding: EdgeInsets.all(40.0),
