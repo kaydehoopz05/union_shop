@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PrintShackPersonalisation extends StatelessWidget {
   const PrintShackPersonalisation({super.key});
 
-   void navigateToProduct(BuildContext context) {
+  void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
   }
 
@@ -115,12 +115,12 @@ class PrintShackPersonalisation extends StatelessWidget {
                                   child: Text('Shop'),
                                 ),
                                 const PopupMenuItem<String>(
-                                  value: 'print_shop',
-                                  child: Text('The Print Shack'),
+                                  value: 'printshackabout',
+                                  child: Text('Print Shack - About'),
                                 ),
                                 const PopupMenuItem<String>(
-                                  value: 'printshackabout',
-                                  child: Text('  - About'),
+                                  value: 'printshackpersonalisation',
+                                  child: Text('Print Shack - Personalisation'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -128,7 +128,7 @@ class PrintShackPersonalisation extends StatelessWidget {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'about',
-                                  child: Text('About'),
+                                  child: Text('About Us'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'signin',
@@ -170,9 +170,9 @@ class PrintShackPersonalisation extends StatelessWidget {
                                   onSelected: (value) {
                                     if (value == 'about') {
                                       navigateToPrintShackAbout(context);
-                                    }
-                                    if (value == 'about') {
-                                      navigateToPrintShackPersonalisation(context);
+                                    } else if (value == 'personalisation') {
+                                      navigateToPrintShackPersonalisation(
+                                          context);
                                     }
                                   },
                                   itemBuilder: (BuildContext context) =>
@@ -228,8 +228,7 @@ class PrintShackPersonalisation extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: () {
-                                  },
+                                  onPressed: () {},
                                 ),
                                 IconButton(
                                   icon: const Icon(
@@ -266,9 +265,9 @@ class PrintShackPersonalisation extends StatelessWidget {
                 ],
               ),
             ),
-          ]
+          ],
         ),
       ),
     );
-    }
   }
+}
