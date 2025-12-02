@@ -403,7 +403,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                   Positioned(
                     left: 24,
                     right: 24,
-                    top: 80,
+                    top: 50,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
