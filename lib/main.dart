@@ -5,9 +5,7 @@ import 'package:union_shop/collections_page.dart';
 import 'package:union_shop/collection_page.dart';
 import 'package:union_shop/sign_in.dart';
 import 'package:union_shop/sale_products.dart';
-// ignore: unused_import
 import 'package:union_shop/print_shack_about.dart';
-// ignore: unused_import
 import 'package:union_shop/print_shack_personalisation.dart';
 
 void main() {
@@ -35,7 +33,7 @@ class UnionShopApp extends StatelessWidget {
         '/signin': (context) => const SignInPage(),
         '/sale': (context) => const SaleProductsPage(),
         '/printshackabout': (context) => const PrintShackAbout(),
-        'printshackpersonalisation': (context) =>
+        '/printshackpersonalisation': (context) =>
             const PrintShackPersonalisation()
       },
     );
@@ -222,6 +220,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   child: Text('  - About'),
                                 ),
                                 const PopupMenuItem<String>(
+                                  value: 'printshackpersonalisation',
+                                  child: Text('  - Personalisation'),
+                                ),
+                                const PopupMenuItem<String>(
                                   value: 'sale',
                                   child: Text('SALE!'),
                                 ),
@@ -269,9 +271,9 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   onSelected: (value) {
                                     if (value == 'about') {
                                       navigateToPrintShackAbout(context);
-                                    }
-                                    if (value == 'personalisation') {
-                                      navigateToPrintShackPersonalisation(context);
+                                    } else if (value == 'personalisation') {
+                                      navigateToPrintShackPersonalisation(
+                                          context);
                                     }
                                   },
                                   itemBuilder: (BuildContext context) =>
