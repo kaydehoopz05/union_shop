@@ -35,6 +35,14 @@ class SaleProductsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/sale');
   }
 
+    void navigateToPrintShackAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackabout');
+  }
+
+  void navigateToPrintShackPersonalisation(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackpersonalisation');
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -95,7 +103,12 @@ class SaleProductsPage extends StatelessWidget {
                                   navigateToSignIn(context);
                                 } else if (value == 'sale') {
                                   navigateToSale(context);
-                                }
+                                } else if (value == 'printshackabout') {
+                                  navigateToPrintShackAbout(context);
+                                } else if (value ==
+                                    'printshackpersonalisation') {
+                                  navigateToPrintShackPersonalisation(context);
+                              }
                               },
                               itemBuilder: (BuildContext context) =>
                                   <PopupMenuEntry<String>>[
