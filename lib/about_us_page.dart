@@ -118,8 +118,12 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           child: Text('Shop'),
                         ),
                         const PopupMenuItem<String>(
-                          value: 'print_shop',
-                          child: Text('The Print Shack ⬇'),
+                          value: 'printshackabout',
+                          child: Text('Print Shack - About'),
+                        ),
+                        const PopupMenuItem<String>(
+                          value: 'printshackpersonalisation',
+                          child: Text('Print Shack - Personalisation'),
                         ),
                         const PopupMenuItem<String>(
                           value: 'sale',
@@ -127,7 +131,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         ),
                         const PopupMenuItem<String>(
                           value: 'about',
-                          child: Text('About'),
+                          child: Text('About Us'),
                         ),
                         const PopupMenuItem<String>(
                           value: 'signin',
@@ -165,10 +169,27 @@ class _AboutUsPageState extends State<AboutUsPage> {
                             ),
                           ),
                         ),
-                        TextButton(
-                          onPressed: placeholderCallbackForButtons,
+                        PopupMenuButton<String>(
+                          onSelected: (value) {
+                            if (value == 'about') {
+                              navigateToPrintShackAbout(context);
+                            } else if (value == 'personalisation') {
+                              navigateToPrintShackPersonalisation(context);
+                            }
+                          },
+                          itemBuilder: (BuildContext context) =>
+                              <PopupMenuEntry<String>>[
+                            const PopupMenuItem<String>(
+                              value: 'about',
+                              child: Text('About'),
+                            ),
+                            const PopupMenuItem<String>(
+                              value: 'personalisation',
+                              child: Text('Personalisation'),
+                            ),
+                          ],
                           child: const Text(
-                            'The Print Shack',
+                            'The Print Shack ⬇',
                             style: TextStyle(
                               color: Colors.black,
                               decoration: TextDecoration.underline,
@@ -222,22 +243,11 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           padding: const EdgeInsets.all(8),
                           constraints:
                               const BoxConstraints(minWidth: 32, minHeight: 32),
-                          onPressed: placeholderCallbackForButtons,
+                          onPressed: () => navigateToSignIn(context),
                         ),
                         IconButton(
                           icon: const Icon(
                             Icons.shopping_bag_outlined,
-                            size: 18,
-                            color: Colors.grey,
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          constraints:
-                              const BoxConstraints(minWidth: 32, minHeight: 32),
-                          onPressed: placeholderCallbackForButtons,
-                        ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.menu,
                             size: 18,
                             color: Colors.grey,
                           ),
