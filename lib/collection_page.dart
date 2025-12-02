@@ -8,8 +8,59 @@ class CollectionPage extends StatefulWidget {
 }
 
 class CollectionPageState extends State<CollectionPage> {
+  bool _isSearchVisible = false;
   String _selectedFilter = 'All Products';
   final List<String> _filters = ['All Products', 'Clothing'];
+
+  final List<Map<String, String>> _allProducts = [
+    {
+      'title': 'Black UOP hoodie',
+      'price': '£15',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'White UOP hoodie',
+      'price': '£15',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'Purple UOP hoodie',
+      'price': '£15',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+    {
+      'title': 'Blue UOP hoodie',
+      'price': '£15',
+      'imageUrl':
+          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+    },
+  ];
+
+  List<Map<String, String>> _foundProducts = [];
+
+  @override
+  void initState() {
+    _foundProducts = _allProducts;
+    super.initState();
+  }
+
+  void _runFilter(String enteredKeyword) {
+    List<Map<String, String>> results = [];
+    if (enteredKeyword.isEmpty) {
+      results = _allProducts;
+    } else {
+      results = _allProducts
+          .where((product) =>
+              product['title']!.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      _foundProducts = results;
+    });
+  }
 
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
@@ -192,7 +243,11 @@ class CollectionPageState extends State<CollectionPage> {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                    setState(() {
+                                      _isSearchVisible = !_isSearchVisible;
+                                    });
+                                  },
                                 ),
                                 IconButton(
                                   icon: const Icon(
@@ -242,6 +297,17 @@ class CollectionPageState extends State<CollectionPage> {
                 ],
               ),
             ),
+            if (_isSearchVisible)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  onChanged: (value) => _runFilter(value),
+                  decoration: const InputDecoration(
+                    labelText: 'Search',
+                    suffixIcon: Icon(Icons.search),
+                  ),
+                ),
+              ),
             Container(
               color: const Color.fromARGB(255, 245, 216, 216),
               child: Padding(
@@ -296,38 +362,20 @@ class CollectionPageState extends State<CollectionPage> {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    GridView.count(
+                    GridView.builder(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 24,
-                      mainAxisSpacing: 48,
-                      children: const [
-                        ProductCard(
-                          title: 'Black UOP hoodie',
-                          price: '£15',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'White UOP hoodie',
-                          price: '£15',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Purple UOP hoodie',
-                          price: '£15',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                        ProductCard(
-                          title: 'Blue UOP hoodie',
-                          price: '£15',
-                          imageUrl:
-                              'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
-                        ),
-                      ],
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 24,
+                        mainAxisSpacing: 48,
+                      ),
+                      itemCount: _foundProducts.length,
+                      itemBuilder: (context, index) => ProductCard(
+                        title: _foundProducts[index]['title']!,
+                        price: _foundProducts[index]['price']!,
+                        imageUrl: _foundProducts[index]['imageUrl']!,
+                      ),
                     ),
                   ],
                 ),
@@ -385,6 +433,10 @@ class ProductCard extends StatelessWidget {
                 maxLines: 2,
               ),
               const SizedBox(height: 4),
+              Text(
+                price,
+                style: const TextStyle(fontSize: 13, color: Colors.grey),
+              ),
             ],
           ),
         ],
