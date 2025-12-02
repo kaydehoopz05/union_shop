@@ -177,7 +177,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           ),
                         ),
                         TextButton(
-                          onPressed: placeholderCallbackForButtons,
+                          onPressed:() => navigateToSale(context),
                           child: const Text(
                             'SALE!',
                             style: TextStyle(
