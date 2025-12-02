@@ -1,9 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:union_shop/product_page.dart';
-// ignore: unused_import
 import 'package:union_shop/about_us_page.dart';
-// ignore: unused_import
 import 'package:union_shop/collection_page.dart';
 
 class SaleProductsPage extends StatelessWidget {
@@ -35,7 +34,7 @@ class SaleProductsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/sale');
   }
 
-    void navigateToPrintShackAbout(BuildContext context) {
+  void navigateToPrintShackAbout(BuildContext context) {
     Navigator.pushNamed(context, '/printshackabout');
   }
 
@@ -108,7 +107,7 @@ class SaleProductsPage extends StatelessWidget {
                                 } else if (value ==
                                     'printshackpersonalisation') {
                                   navigateToPrintShackPersonalisation(context);
-                              }
+                                }
                               },
                               itemBuilder: (BuildContext context) =>
                                   <PopupMenuEntry<String>>[
@@ -121,8 +120,12 @@ class SaleProductsPage extends StatelessWidget {
                                   child: Text('Shop'),
                                 ),
                                 const PopupMenuItem<String>(
-                                  value: 'print_shop',
-                                  child: Text('The Print Shack'),
+                                  value: 'printshackabout',
+                                  child: Text('Print Shack - About'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'printshackpersonalisation',
+                                  child: Text('Print Shack - Personalisation'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -130,7 +133,7 @@ class SaleProductsPage extends StatelessWidget {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'about',
-                                  child: Text('About'),
+                                  child: Text('About Us'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'signin',
@@ -168,10 +171,28 @@ class SaleProductsPage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                PopupMenuButton<String>(
+                                  onSelected: (value) {
+                                    if (value == 'about') {
+                                      navigateToPrintShackAbout(context);
+                                    } else if (value == 'personalisation') {
+                                      navigateToPrintShackPersonalisation(
+                                          context);
+                                    }
+                                  },
+                                  itemBuilder: (BuildContext context) =>
+                                      <PopupMenuEntry<String>>[
+                                    const PopupMenuItem<String>(
+                                      value: 'about',
+                                      child: Text('About'),
+                                    ),
+                                    const PopupMenuItem<String>(
+                                      value: 'personalisation',
+                                      child: Text('Personalisation'),
+                                    ),
+                                  ],
                                   child: const Text(
-                                    'The Print Shack',
+                                    'The Print Shack ⬇',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
@@ -246,10 +267,11 @@ class SaleProductsPage extends StatelessWidget {
                       ),
                     ),
                   )
+                ],
+              ),
+            ),
+// Add the rest of your page content here
           ],
-        ),
-      ),
-        ]
         ),
       ),
     );
