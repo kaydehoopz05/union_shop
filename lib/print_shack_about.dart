@@ -1,4 +1,12 @@
+// ignore_for_file: unused_import
 import 'package:flutter/material.dart';
+import 'package:union_shop/main.dart';
+import 'package:union_shop/product_page.dart';
+import 'package:union_shop/about_us_page.dart';
+import 'package:union_shop/collections_page.dart';
+import 'package:union_shop/collection_page.dart';
+import 'package:union_shop/sign_in.dart';
+import 'package:union_shop/sale_products.dart';
 
 class PrintShackAbout extends StatelessWidget {
   const PrintShackAbout({super.key});
@@ -11,6 +19,10 @@ class PrintShackAbout extends StatelessWidget {
     Navigator.pushNamed(context, '/about');
   }
 
+  void navigateToCollections(BuildContext context) {
+    Navigator.pushNamed(context, '/collections');
+  }
+
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
@@ -19,43 +31,47 @@ class PrintShackAbout extends StatelessWidget {
     Navigator.pushNamed(context, '/signin');
   }
 
+  void navigateToSale(BuildContext context) {
+    Navigator.pushNamed(context, '/sale');
+  }
+
+  void navigateToPrintShackAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackabout');
+  }
+
   void placeholderCallbackForButtons() {}
 
-    @override
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     bool isMobile = screenSize.width < 800;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header
             Container(
               height: 100,
               color: Colors.white,
               child: Column(
                 children: [
-                  // Top banner
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 8),
                     color: const Color(0xFF4d2963),
                     child: const Text(
-                      'PLACEHOLDER HEADER TEXT',
+                      '20% OFF ON ALL PRODUCTS. COME AND GRAB THIS OFFER',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                   ),
-                  // Main header
                   Expanded(
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
                         children: [
                           GestureDetector(
-                            onTap: () {
-                              navigateToHome(context);
-                            },
+                            onTap: () => navigateToHome(context),
                             child: Image.network(
                               'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
                               height: 18,
@@ -83,6 +99,10 @@ class PrintShackAbout extends StatelessWidget {
                                   navigateToAboutUs(context);
                                 } else if (value == 'signin') {
                                   navigateToSignIn(context);
+                                } else if (value == 'sale') {
+                                  navigateToSale(context);
+                                } else if (value == 'printshackabout') {
+                                  navigateToPrintShackAbout(context);
                                 }
                               },
                               itemBuilder: (BuildContext context) =>
@@ -98,6 +118,10 @@ class PrintShackAbout extends StatelessWidget {
                                 const PopupMenuItem<String>(
                                   value: 'print_shop',
                                   child: Text('The Print Shack'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'printshackabout',
+                                  child: Text('  - About'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -117,8 +141,8 @@ class PrintShackAbout extends StatelessWidget {
                             )
                           else
                             Wrap(
-                              spacing: 8.0, // Horizontal space between children
-                              runSpacing: 4.0, // Vertical space between runs
+                              spacing: 8.0,
+                              runSpacing: 4.0,
                               alignment: WrapAlignment.end,
                               children: [
                                 TextButton(
@@ -143,10 +167,25 @@ class PrintShackAbout extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                PopupMenuButton<String>(
+                                  onSelected: (value) {
+                                    if (value == 'about') {
+                                      navigateToPrintShackAbout(context);
+                                    }
+                                  },
+                                  itemBuilder: (BuildContext context) =>
+                                      <PopupMenuEntry<String>>[
+                                    const PopupMenuItem<String>(
+                                      value: 'about',
+                                      child: Text('About'),
+                                    ),
+                                    const PopupMenuItem<String>(
+                                      value: 'personalisation',
+                                      child: Text('Personalisation'),
+                                    ),
+                                  ],
                                   child: const Text(
-                                    'The Print Shack',
+                                    'The Print Shack ⬇',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
@@ -155,7 +194,7 @@ class PrintShackAbout extends StatelessWidget {
                                   ),
                                 ),
                                 TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () => navigateToSale(context),
                                   child: const Text(
                                     'SALE!',
                                     style: TextStyle(
@@ -187,7 +226,8 @@ class PrintShackAbout extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                  },
                                 ),
                                 IconButton(
                                   icon: const Icon(
@@ -200,24 +240,11 @@ class PrintShackAbout extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () => navigateToSignIn(context),
                                 ),
                                 IconButton(
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
-                                ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.menu,
                                     size: 18,
                                     color: Colors.grey,
                                   ),
@@ -237,11 +264,23 @@ class PrintShackAbout extends StatelessWidget {
                 ],
               ),
             ),
-          ]
-        )
-      )
+            Container(
+              width: double.infinity,
+              color: const Color.fromARGB(255, 41, 121, 179),
+              padding: const EdgeInsets.all(24),
+              child: const Text(
+                'Opening Hours',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
 }
-

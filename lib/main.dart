@@ -122,6 +122,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     Navigator.pushNamed(context, '/sale');
   }
 
+  void navigateToPrintShackAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackabout');
+  }
+
   void placeholderCallbackForButtons() {}
 
   @override
@@ -184,6 +188,8 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   navigateToSignIn(context);
                                 } else if (value == 'sale') {
                                   navigateToSale(context);
+                                } else if (value == 'printshackabout') {
+                                  navigateToPrintShackAbout(context);
                                 }
                               },
                               itemBuilder: (BuildContext context) =>
@@ -199,6 +205,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                 const PopupMenuItem<String>(
                                   value: 'print_shop',
                                   child: Text('The Print Shack'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'printshackabout',
+                                  child: Text('  - About'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -246,7 +256,9 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                 ),
                                 PopupMenuButton<String>(
                                   onSelected: (value) {
-                                    // Handle menu item selection
+                                    if (value == 'about') {
+                                      navigateToPrintShackAbout(context);
+                                    }
                                   },
                                   itemBuilder: (BuildContext context) =>
                                       <PopupMenuEntry<String>>[
