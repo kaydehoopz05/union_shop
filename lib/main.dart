@@ -221,7 +221,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'printshackpersonalisation',
-                                  child: Text('  - Personalisation'),
+                                  child: Text('Personalisation'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
