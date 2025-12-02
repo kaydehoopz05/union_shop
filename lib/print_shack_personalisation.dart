@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class PrintShackPersonalisation extends StatelessWidget {
   const PrintShackPersonalisation({super.key});
 
-  void navigateToProduct(BuildContext context) {
+   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
   }
 
@@ -29,6 +29,10 @@ class PrintShackPersonalisation extends StatelessWidget {
 
   void navigateToPrintShackAbout(BuildContext context) {
     Navigator.pushNamed(context, '/printshackabout');
+  }
+
+  void navigateToPrintShackPersonalisation(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
   void placeholderCallbackForButtons() {}
@@ -95,6 +99,9 @@ class PrintShackPersonalisation extends StatelessWidget {
                                   navigateToSale(context);
                                 } else if (value == 'printshackabout') {
                                   navigateToPrintShackAbout(context);
+                                } else if (value ==
+                                    'printshackpersonalisation') {
+                                  navigateToPrintShackPersonalisation(context);
                                 }
                               },
                               itemBuilder: (BuildContext context) =>
@@ -163,6 +170,9 @@ class PrintShackPersonalisation extends StatelessWidget {
                                   onSelected: (value) {
                                     if (value == 'about') {
                                       navigateToPrintShackAbout(context);
+                                    }
+                                    if (value == 'about') {
+                                      navigateToPrintShackPersonalisation(context);
                                     }
                                   },
                                   itemBuilder: (BuildContext context) =>
@@ -256,23 +266,9 @@ class PrintShackPersonalisation extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              color: const Color.fromARGB(255, 41, 121, 179),
-              padding: const EdgeInsets.all(24),
-              child: const Text(
-                'Opening Hours',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
+          ]
         ),
       ),
     );
+    }
   }
-
-}

@@ -270,6 +270,9 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                     if (value == 'about') {
                                       navigateToPrintShackAbout(context);
                                     }
+                                    else if (value == 'personalisation') {
+                                      navigateToPrintShackPersonalisation(context);
+                                    }
                                   },
                                   itemBuilder: (BuildContext context) =>
                                       <PopupMenuEntry<String>>[
