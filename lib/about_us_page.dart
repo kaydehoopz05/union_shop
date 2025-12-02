@@ -269,7 +269,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   Text(
                     'ABOUT US',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 28,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1,
                     ),
