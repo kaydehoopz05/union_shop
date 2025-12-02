@@ -15,27 +15,27 @@ class CollectionPageState extends State<CollectionPage> {
   final List<Map<String, String>> _allProducts = [
     {
       'title': 'Black UOP hoodie',
-      'price': '£15',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://www.bing.com/th/id/OIG2.97K7l8kwrQmsaPjIBwDw?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
       'title': 'White UOP hoodie',
-      'price': '£15',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://www.bing.com/th/id/OIG1.CgBCfUWmAfpy2pIM5sRp?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
       'title': 'Purple UOP hoodie',
-      'price': '£15',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://www.bing.com/th/id/OIG3.RkpRgfz74z9br17aNRbH?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
       'title': 'Blue UOP hoodie',
-      'price': '£15',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://www.bing.com/th/id/OIG2.vV41rM9woepXlKQWqXhe?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
   ];
 
@@ -343,7 +343,7 @@ class CollectionPageState extends State<CollectionPage> {
                 child: Column(
                   children: [
                     const Text(
-                      'HOODIES',
+                      'HOODIE COLLECTION',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
@@ -351,7 +351,7 @@ class CollectionPageState extends State<CollectionPage> {
                       ),
                     ),
                     const Text(
-                      'Buy smth',
+                      'Buy a cozy hoodie.',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black,
@@ -359,7 +359,7 @@ class CollectionPageState extends State<CollectionPage> {
                       ),
                     ),
                     const Text(
-                      "Our essential collections are below. From sports to streetwear, there's something there for you.",
+                      "Our essential hoodies are below. There's something there for you.",
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.black,

@@ -54,25 +54,25 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
       'title': 'Purple UOP hoodie',
       'price': '£15.00',
       'imageUrl':
-          'https://th.bing.com/th/id/OIP.rKDWrB-LWQsVSLqrobhYwgHaEz?w=275&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3',
+          'https://www.bing.com/th/id/OIG3.RkpRgfz74z9br17aNRbH?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
-      'title': 'Simple UOP shirt',
+      'title': 'Black UOP shirt',
       'price': '£10.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://th.bing.com/th/id/OIG3.re7ORTDcIpiDKjB4GLG6?w=270&h=270&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
-      'title': 'Placeholder Product 3',
-      'price': '£20.00',
+      'title': 'Purple POMPEY Cap',
+      'price': '£5.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://th.bing.com/th/id/OIG1.BYU8T8ZxnFVyjxMZVcYz?w=270&h=270&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
     {
-      'title': 'Placeholder Product 4',
-      'price': '£25.00',
+      'title': 'UOP White Bottoms',
+      'price': '£15.00',
       'imageUrl':
-          'https://shop.upsu.net/cdn/shop/files/PortsmouthCityMagnet1_1024x1024@2x.jpg?v=1752230282',
+          'https://www.bing.com/th/id/OIG1.Leorup0zYwMTM_adbfwq?w=540&h=540&c=6&r=0&o=5&dpr=1.5&pid=ImgGn',
     },
   ];
 
