@@ -78,6 +78,18 @@ class CollectionPageState extends State<CollectionPage> {
     Navigator.pushNamed(context, '/signin');
   }
 
+  void navigateToSale(BuildContext context) {
+    Navigator.pushNamed(context, '/sale');
+  }
+
+  void navigateToPrintShackAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackabout');
+  }
+
+  void navigateToPrintShackPersonalisation(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackpersonalisation');
+  }
+
   void placeholderCallbackForButtons() {}
 
   @override
@@ -139,6 +151,13 @@ class CollectionPageState extends State<CollectionPage> {
                                   navigateToAboutUs(context);
                                 } else if (value == 'signin') {
                                   navigateToSignIn(context);
+                                } else if (value == 'sale') {
+                                  navigateToSale(context);
+                                } else if (value == 'printshackabout') {
+                                  navigateToPrintShackAbout(context);
+                                } else if (value ==
+                                    'printshackpersonalisation') {
+                                  navigateToPrintShackPersonalisation(context);
                                 }
                               },
                               itemBuilder: (BuildContext context) =>
@@ -152,8 +171,12 @@ class CollectionPageState extends State<CollectionPage> {
                                   child: Text('Shop'),
                                 ),
                                 const PopupMenuItem<String>(
-                                  value: 'print_shop',
-                                  child: Text('The Print Shack'),
+                                  value: 'printshackabout',
+                                  child: Text('Print Shack - About'),
+                                ),
+                                const PopupMenuItem<String>(
+                                  value: 'printshackpersonalisation',
+                                  child: Text('Print Shack - Personalisation'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'sale',
@@ -161,7 +184,7 @@ class CollectionPageState extends State<CollectionPage> {
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'about',
-                                  child: Text('About'),
+                                  child: Text('About Us'),
                                 ),
                                 const PopupMenuItem<String>(
                                   value: 'signin',
@@ -199,10 +222,28 @@ class CollectionPageState extends State<CollectionPage> {
                                     ),
                                   ),
                                 ),
-                                TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                PopupMenuButton<String>(
+                                  onSelected: (value) {
+                                    if (value == 'about') {
+                                      navigateToPrintShackAbout(context);
+                                    } else if (value == 'personalisation') {
+                                      navigateToPrintShackPersonalisation(
+                                          context);
+                                    }
+                                  },
+                                  itemBuilder: (BuildContext context) =>
+                                      <PopupMenuEntry<String>>[
+                                    const PopupMenuItem<String>(
+                                      value: 'about',
+                                      child: Text('About'),
+                                    ),
+                                    const PopupMenuItem<String>(
+                                      value: 'personalisation',
+                                      child: Text('Personalisation'),
+                                    ),
+                                  ],
                                   child: const Text(
-                                    'The Print Shack',
+                                    'The Print Shack ⬇',
                                     style: TextStyle(
                                       color: Colors.black,
                                       decoration: TextDecoration.underline,
@@ -211,7 +252,7 @@ class CollectionPageState extends State<CollectionPage> {
                                   ),
                                 ),
                                 TextButton(
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () => navigateToSale(context),
                                   child: const Text(
                                     'SALE!',
                                     style: TextStyle(
@@ -260,24 +301,11 @@ class CollectionPageState extends State<CollectionPage> {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () => navigateToSignIn(context),
                                 ),
                                 IconButton(
                                   icon: const Icon(
                                     Icons.shopping_bag_outlined,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  ),
-                                  padding: const EdgeInsets.all(8),
-                                  constraints: const BoxConstraints(
-                                    minWidth: 32,
-                                    minHeight: 32,
-                                  ),
-                                  onPressed: placeholderCallbackForButtons,
-                                ),
-                                IconButton(
-                                  icon: const Icon(
-                                    Icons.menu,
                                     size: 18,
                                     color: Colors.grey,
                                   ),
