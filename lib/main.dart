@@ -35,7 +35,8 @@ class UnionShopApp extends StatelessWidget {
         '/signin': (context) => const SignInPage(),
         '/sale': (context) => const SaleProductsPage(),
         '/printshackabout': (context) => const PrintShackAbout(),
-        'printshackpersonalisation': (context) => const PrintShackPersonalisation()
+        'printshackpersonalisation': (context) =>
+            const PrintShackPersonalisation()
       },
     );
   }
@@ -129,6 +130,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     Navigator.pushNamed(context, '/printshackabout');
   }
 
+  void navigateToPrintShackPersonalisation(BuildContext context) {
+    Navigator.pushNamed(context, '/printshackpersonalisation');
+  }
+
   void placeholderCallbackForButtons() {}
 
   @override
@@ -193,6 +198,9 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                                   navigateToSale(context);
                                 } else if (value == 'printshackabout') {
                                   navigateToPrintShackAbout(context);
+                                } else if (value ==
+                                    'printshackpersonalisation') {
+                                  navigateToPrintShackPersonalisation(context);
                                 }
                               },
                               itemBuilder: (BuildContext context) =>
