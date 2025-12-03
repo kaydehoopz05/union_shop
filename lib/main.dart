@@ -135,7 +135,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
   }
 
   void navigateToDummyPage(BuildContext context) {
-    Navigator.pushNamed(context, 'dummypage');
+    Navigator.pushNamed(context, '/dummypage');
   }
 
   void placeholderCallbackForButtons() {}
