@@ -510,7 +510,11 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
               ),
             ),
             TextButton(
-              onPressed: () => navigateToDummyPage(context),
+              onPressed: () => {
+                setState(() {
+                  _isSearchVisible = !_isSearchVisible;
+                })
+              },
               child: const Text(
                 'Search',
                 style: TextStyle(
