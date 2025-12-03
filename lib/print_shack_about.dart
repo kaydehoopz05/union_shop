@@ -43,6 +43,14 @@ class PrintShackAbout extends StatelessWidget {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
+    void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   void placeholderCallbackForButtons() {}
 
   @override
@@ -273,16 +281,27 @@ class PrintShackAbout extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              color: const Color.fromARGB(255, 41, 121, 179),
-              padding: const EdgeInsets.all(24),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
               child: const Text(
                 'Opening Hours',
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),
