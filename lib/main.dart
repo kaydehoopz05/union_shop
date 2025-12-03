@@ -512,14 +512,14 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
             ),
             Container(
               width: double.infinity,
-              color: const Color.fromARGB(255, 41, 121, 179),
+              color: const Color.fromARGB(0,0,0,0),
               padding: const EdgeInsets.all(24),
               child: const Text(
-                'Term Time',
+                'Term Time\nMonday - Friday : 10am - 4pm',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w200,
                 ),
               ),
             ),
