@@ -2,13 +2,21 @@ import 'package:flutter/material.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({super.key});
+  
 
   @override
   State<AboutUsPage> createState() => _AboutUsPageState();
 }
 
 class _AboutUsPageState extends State<AboutUsPage> {
+  final ScrollController _scrollController = ScrollController();
   bool _isSearchVisible = false;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -60,6 +68,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
     bool isMobile = screenSize.width < 800;
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             // Header
@@ -305,6 +314,27 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
             // Footer
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _isSearchVisible = !_isSearchVisible;
+                });
+                _scrollController.animateTo(
+                  0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: const Text(
+                'Search',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
             TextButton(
               onPressed: () => navigateToDummyPage(context),
               child: const Text(

@@ -52,6 +52,7 @@ class ResponsiveHomePage extends StatefulWidget {
 }
 
 class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
+  final ScrollController _scrollController = ScrollController();
   bool _isSearchVisible = false;
   final List<Map<String, String>> _allProducts = [
     {
@@ -86,6 +87,12 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
   void initState() {
     _foundProducts = _allProducts;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   void _runFilter(String enteredKeyword) {
@@ -153,6 +160,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
 
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             Container(
@@ -510,10 +518,15 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
               ),
             ),
             TextButton(
-              onPressed: () => {
+              onPressed: () {
                 setState(() {
                   _isSearchVisible = !_isSearchVisible;
-                })
+                });
+                _scrollController.animateTo(
+                  0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
               },
               child: const Text(
                 'Search',
