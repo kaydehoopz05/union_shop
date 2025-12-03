@@ -522,7 +522,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
               ),
             ),
             TextButton(
-              onPressed: () => navigateToDummyPage(context),
+              onPressed: () => navigateToDummyPage2(context),
               child: const Text(
                 'What link is this?',
                 style: TextStyle(
