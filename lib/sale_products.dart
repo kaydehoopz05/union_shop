@@ -42,6 +42,14 @@ class SaleProductsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
+    void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -268,6 +276,30 @@ class SaleProductsPage extends StatelessWidget {
                     ),
                   )
                 ],
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
+                'Opening Hours',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
 // Add the rest of your page content here

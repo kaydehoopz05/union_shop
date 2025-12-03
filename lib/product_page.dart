@@ -19,6 +19,14 @@ class ProductPage extends StatelessWidget {
     Navigator.pushNamed(context, '/signin');
   }
 
+    void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -341,6 +349,30 @@ class ProductPage extends StatelessWidget {
                   color: Colors.grey,
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
+                'Opening Hours',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),
