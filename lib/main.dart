@@ -7,6 +7,7 @@ import 'package:union_shop/sign_in.dart';
 import 'package:union_shop/sale_products.dart';
 import 'package:union_shop/print_shack_about.dart';
 import 'package:union_shop/print_shack_personalisation.dart';
+import 'package:union_shop/dummy_page.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -34,7 +35,8 @@ class UnionShopApp extends StatelessWidget {
         '/sale': (context) => const SaleProductsPage(),
         '/printshackabout': (context) => const PrintShackAbout(),
         '/printshackpersonalisation': (context) =>
-            const PrintShackPersonalisation()
+            const PrintShackPersonalisation(),
+        '/dummypage': (context) => const DummyPage()
       },
     );
   }
@@ -130,6 +132,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
 
   void navigateToPrintShackPersonalisation(BuildContext context) {
     Navigator.pushNamed(context, '/printshackpersonalisation');
+  }
+
+  void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, 'dummypage');
   }
 
   void placeholderCallbackForButtons() {}
@@ -512,7 +518,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
             ),
             Container(
               width: double.infinity,
-              color: const Color.fromARGB(0,0,0,0),
+              color: const Color.fromARGB(0, 0, 0, 0),
               padding: const EdgeInsets.all(24),
               child: const Text(
                 'Term Time\nMonday - Friday : 10am - 4pm',
