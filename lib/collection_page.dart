@@ -90,6 +90,14 @@ class CollectionPageState extends State<CollectionPage> {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
+    void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   void placeholderCallbackForButtons() {}
 
   @override
@@ -406,6 +414,30 @@ class CollectionPageState extends State<CollectionPage> {
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
+                'Opening Hours',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),

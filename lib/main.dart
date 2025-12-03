@@ -515,7 +515,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                 'Opening Hours',
                 style: TextStyle(
                   color: Colors.black87,
-                  fontSize: 20,
+                  fontSize: 15,
                   fontWeight: FontWeight.w200,
                   decoration: TextDecoration.underline,
                 ),
@@ -527,7 +527,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                 'Terms and Conditions',
                 style: TextStyle(
                   color: Colors.black87,
-                  fontSize: 20,
+                  fontSize: 15,
                   fontWeight: FontWeight.w200,
                   decoration: TextDecoration.underline,
                 ),
