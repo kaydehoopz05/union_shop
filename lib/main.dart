@@ -529,6 +529,20 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                 ),
               ),
             ),
+            Container(
+              width: double.infinity,
+              color: const Color.fromARGB(0, 0, 0, 0),
+              padding: const EdgeInsets.all(24),
+              child: const Text(
+                'Click for link',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
           ],
         ),
       ),
