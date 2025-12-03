@@ -524,7 +524,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
             TextButton(
               onPressed: () => navigateToDummyPage2(context),
               child: const Text(
-                'What link is this?',
+                'Terms and Conditions',
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 20,
