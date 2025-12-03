@@ -516,7 +516,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 20,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w200,
                   decoration: TextDecoration.underline,
                 ),
               ),
@@ -528,7 +528,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 20,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w200,
                   decoration: TextDecoration.underline,
                 ),
               ),
