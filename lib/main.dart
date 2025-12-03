@@ -511,7 +511,7 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
                   color: Colors.black87,
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
-                  decoration: TextDecoration.underline
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),
