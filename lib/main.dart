@@ -499,13 +499,26 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
             ),
             Container(
               width: double.infinity,
-              color: const Color.fromARGB(255, 41, 121, 179),
-              padding: const EdgeInsets.all(24),
+              color: const Color.fromRGBO(0, 0, 0, 0),
+              padding: const EdgeInsets.all(10),
               child: const Text(
                 'Opening Hours',
                 style: TextStyle(
-                  color: Colors.grey,
+                  color: Colors.black87,
                   fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              color: const Color.fromARGB(255, 41, 121, 179),
+              padding: const EdgeInsets.all(24),
+              child: const Text(
+                'Term Time',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ),
               ),
