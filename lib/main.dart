@@ -8,6 +8,7 @@ import 'package:union_shop/sale_products.dart';
 import 'package:union_shop/print_shack_about.dart';
 import 'package:union_shop/print_shack_personalisation.dart';
 import 'package:union_shop/dummy_page.dart';
+import 'package:union_shop/dummy_page2.dart';
 
 void main() {
   runApp(const UnionShopApp());
@@ -36,7 +37,8 @@ class UnionShopApp extends StatelessWidget {
         '/printshackabout': (context) => const PrintShackAbout(),
         '/printshackpersonalisation': (context) =>
             const PrintShackPersonalisation(),
-        '/dummypage': (context) => const DummyPage()
+        '/dummypage': (context) => const DummyPage(),
+        '/dummypage2': (context) => const DummyPage2(),
       },
     );
   }
@@ -128,6 +130,10 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
 
   void navigateToPrintShackAbout(BuildContext context) {
     Navigator.pushNamed(context, '/printshackabout');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
   }
 
   void navigateToPrintShackPersonalisation(BuildContext context) {
@@ -504,9 +510,21 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
               ),
             ),
             TextButton(
-              onPressed: () => navigateToDummyPage(context),
+              onPressed: () => navigateToDummyPage2(context),
               child: const Text(
                 'Opening Hours',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
+                'What link is this?',
                 style: TextStyle(
                   color: Colors.black87,
                   fontSize: 20,
