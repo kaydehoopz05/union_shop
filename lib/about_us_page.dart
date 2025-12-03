@@ -46,6 +46,14 @@ class _AboutUsPageState extends State<AboutUsPage> {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
+    void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -297,16 +305,27 @@ class _AboutUsPageState extends State<AboutUsPage> {
               ),
             ),
             // Footer
-            Container(
-              width: double.infinity,
-              color: Colors.grey[50],
-              padding: const EdgeInsets.all(24),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
               child: const Text(
-                'ADD LINKS',
+                'Opening Hours',
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),

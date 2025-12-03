@@ -132,16 +132,16 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
     Navigator.pushNamed(context, '/printshackabout');
   }
 
+  void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
   void navigateToDummyPage2(BuildContext context) {
     Navigator.pushNamed(context, '/dummypage2');
   }
 
   void navigateToPrintShackPersonalisation(BuildContext context) {
     Navigator.pushNamed(context, '/printshackpersonalisation');
-  }
-
-  void navigateToDummyPage(BuildContext context) {
-    Navigator.pushNamed(context, '/dummypage');
   }
 
   void placeholderCallbackForButtons() {}
