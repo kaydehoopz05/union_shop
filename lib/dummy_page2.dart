@@ -15,7 +15,7 @@ class DummyPage2 extends StatelessWidget {
         ),
       ),
       body: const Center(
-        child: Text('dummy'),
+        child: Text('Conditions and Terms'),
       ),
     );
   }
