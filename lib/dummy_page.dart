@@ -8,7 +8,14 @@ class DummyPage extends StatefulWidget {
 }
 
 class _DummyPageState extends State<DummyPage> {
+  final ScrollController _scrollController = ScrollController();
   bool _isSearchVisible = false;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   void navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -46,12 +53,21 @@ class _DummyPageState extends State<DummyPage> {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
+  void navigateToDummyPage(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage');
+  }
+
+  void navigateToDummyPage2(BuildContext context) {
+    Navigator.pushNamed(context, '/dummypage2');
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     bool isMobile = screenSize.width < 800;
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             // Header
@@ -274,6 +290,51 @@ class _DummyPageState extends State<DummyPage> {
             const Center(
               child: Text('This is a dummy page.'),
             ), 
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _isSearchVisible = !_isSearchVisible;
+                });
+                _scrollController.animateTo(
+                  0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: const Text(
+                'Search',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
+                'Opening Hours',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage2(context),
+              child: const Text(
+                'Terms and Conditions',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
           ],
         ),
       ),

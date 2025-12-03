@@ -8,6 +8,7 @@ class CollectionPage extends StatefulWidget {
 }
 
 class CollectionPageState extends State<CollectionPage> {
+  final ScrollController _scrollController = ScrollController();
   bool _isSearchVisible = false;
   String _selectedFilter = 'All Products';
   final List<String> _filters = ['All Products', 'Clothing'];
@@ -45,6 +46,12 @@ class CollectionPageState extends State<CollectionPage> {
   void initState() {
     _foundProducts = _allProducts;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   void _runFilter(String enteredKeyword) {
@@ -108,6 +115,7 @@ class CollectionPageState extends State<CollectionPage> {
 
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             Container(
@@ -414,6 +422,27 @@ class CollectionPageState extends State<CollectionPage> {
                       ),
                     ),
                   ],
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _isSearchVisible = !_isSearchVisible;
+                });
+                _scrollController.animateTo(
+                  0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: const Text(
+                'Search',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),

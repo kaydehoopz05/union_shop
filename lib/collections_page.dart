@@ -1,8 +1,21 @@
 import 'package:flutter/material.dart';
 
-
-class CollectionsPage extends StatelessWidget {
+class CollectionsPage extends StatefulWidget {
   const CollectionsPage({super.key});
+
+  @override
+  State<CollectionsPage> createState() => _CollectionsPageState();
+}
+
+class _CollectionsPageState extends State<CollectionsPage> {
+  final ScrollController _scrollController = ScrollController();
+  bool _isSearchVisible = false;
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   void navigateToProduct(BuildContext context) {
     Navigator.pushNamed(context, '/product');
@@ -36,7 +49,7 @@ class CollectionsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
-    void navigateToDummyPage(BuildContext context) {
+  void navigateToDummyPage(BuildContext context) {
     Navigator.pushNamed(context, '/dummypage');
   }
 
@@ -48,12 +61,12 @@ class CollectionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
     var screenSize = MediaQuery.of(context).size;
     bool isMobile = screenSize.width < 800;
 
     return Scaffold(
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Column(
           children: [
             Container(
@@ -238,7 +251,11 @@ class CollectionsPage extends StatelessWidget {
                                     minWidth: 32,
                                     minHeight: 32,
                                   ),
-                                  onPressed: placeholderCallbackForButtons,
+                                  onPressed: () {
+                                    setState(() {
+                                      _isSearchVisible = !_isSearchVisible;
+                                    });
+                                  },
                                 ),
                                 IconButton(
                                   icon: const Icon(
@@ -275,6 +292,16 @@ class CollectionsPage extends StatelessWidget {
                 ],
               ),
             ),
+            if (_isSearchVisible)
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Search',
+                    suffixIcon: Icon(Icons.search),
+                  ),
+                ),
+              ),
             Container(
               color: const Color.fromARGB(255, 245, 216, 216),
               child: Padding(
@@ -330,6 +357,27 @@ class CollectionsPage extends StatelessWidget {
                       ],
                     ),
                   ],
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                setState(() {
+                  _isSearchVisible = !_isSearchVisible;
+                });
+                _scrollController.animateTo(
+                  0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: const Text(
+                'Search',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
                 ),
               ),
             ),
