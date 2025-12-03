@@ -512,6 +512,18 @@ class _ResponsiveHomePageState extends State<ResponsiveHomePage> {
             TextButton(
               onPressed: () => navigateToDummyPage(context),
               child: const Text(
+                'Search',
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w200,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () => navigateToDummyPage(context),
+              child: const Text(
                 'Opening Hours',
                 style: TextStyle(
                   color: Colors.black87,

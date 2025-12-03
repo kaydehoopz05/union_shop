@@ -1,9 +1,4 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
-import 'package:union_shop/product_page.dart';
-import 'package:union_shop/about_us_page.dart';
-import 'package:union_shop/collection_page.dart';
 
 class SaleProductsPage extends StatelessWidget {
   const SaleProductsPage({super.key});
@@ -42,7 +37,7 @@ class SaleProductsPage extends StatelessWidget {
     Navigator.pushNamed(context, '/printshackpersonalisation');
   }
 
-    void navigateToDummyPage(BuildContext context) {
+  void navigateToDummyPage(BuildContext context) {
     Navigator.pushNamed(context, '/dummypage');
   }
 
