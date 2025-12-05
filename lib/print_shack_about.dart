@@ -281,6 +281,27 @@ class PrintShackAbout extends StatelessWidget {
                 ],
               ),
             ),
+            const Padding(
+              padding: EdgeInsets.all(40.0),
+              child: Column(
+                children: [
+                  Text(
+                    'ABOUT PRINT SHACK',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  Text(
+                    ' This is the Print Shack.\n We sell personalised hoodies for you to enjoy and show off.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16.0, height: 1.5),
+                  ),
+                ],
+              ),
+            ),
             TextButton(
               onPressed: () => navigateToDummyPage(context),
               child: const Text(
